@@ -74,11 +74,45 @@ O banco de dados foi implementado com os seguintes passos:
 ---
 
 ## Consultas de Exemplo
-O banco permite consultas para responder perguntas como:
+O banco permite consultas para responder perguntas como ex:
 - Quais são os serviços realizados em uma determinada OS?
+  
+- SELECT 
+    
+    descricao AS servico,
+    data_os AS OrdemServico,
+    cl.Nome AS Cliente,
+    ve.Placa AS Veiculo
+FROM 
+    Servico
+JOIN 
+    Cliente cl ON ID_Cliente = cl.ID_Cliente
+JOIN 
+    Veiculo ve ON ID_Veiculo = ve.ID_Veiculo
+JOIN 
+    OrdemServico ON ID_servico = ID_servico
+WHERE 
+    ID_os = ID_os;
 - Quais peças foram utilizadas em uma OS específica?
-- Qual é o valor total de uma OS?
-- Quais clientes possuem veículos registrados?
+
+  SELECT 
+    
+    p.descricao AS Peca,
+    OS.id_os AS OS_Servico,
+    cl.Nome AS Cliente,
+    ve.Placa AS Veiculo
+FROM 
+    Servico
+JOIN 
+    Cliente cl ON ID_Cliente = cl.ID_Cliente
+JOIN 
+    Veiculo ve ON ID_Veiculo = ve.ID_Veiculo
+JOIN 
+    OS_Servico OS ON id_OS = id_OS
+JOIN 
+    Peca p ON id_peca = id_peca
+WHERE 
+    id_os = 2;
 
 ---
 
