@@ -74,7 +74,7 @@ O banco de dados foi implementado com os seguintes passos:
 ---
 
 ## Consultas de Exemplo
-# O banco permite consultas para responder perguntas como ex:
+### O banco permite consultas para responder perguntas como ex:
 - Quais são os serviços realizados em uma determinada OS?
   
 - SELECT 
